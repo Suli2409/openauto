@@ -326,6 +326,9 @@ comboBoxBluetooth->addItem(QCoreApplication::translate("SettingsWindow", "none",
     } else if (ui_->radioButton1080p->isChecked()) {
       configuration_->setVideoResolution(
           aap_protobuf::service::media::sink::message::VideoCodecResolutionType::VIDEO_1920x1080);
+    }  else if (ui_->radioButton400p->isChecked()) {
+      configuration_->setVideoResolution(
+          aap_protobuf::service::media::sink::message::VideoCodecResolutionType::VIDEO_1280x400);
     }
 
     configuration_->setScreenDPI(static_cast<size_t>(ui_->horizontalSliderScreenDPI->value()));
@@ -617,6 +620,8 @@ comboBoxBluetooth->addItem(QCoreApplication::translate("SettingsWindow", "none",
                                      aap_protobuf::service::media::sink::message::VideoCodecResolutionType::VIDEO_1280x720);
     ui_->radioButton1080p->setChecked(configuration_->getVideoResolution() ==
                                       aap_protobuf::service::media::sink::message::VideoCodecResolutionType::VIDEO_1920x1080);
+    ui_->radioButton400p->setChecked(configuration_->getVideoResolution() ==
+                                      aap_protobuf::service::media::sink::message::VideoCodecResolutionType::VIDEO_1280x400);                                  
     ui_->horizontalSliderScreenDPI->setValue(static_cast<int>(configuration_->getScreenDPI()));
     ui_->spinBoxOmxLayerIndex->setValue(configuration_->getOMXLayerIndex());
 

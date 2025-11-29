@@ -105,6 +105,10 @@ namespace f1x::openauto::autoapp::service {
         OPENAUTO_LOG(info) << "[ServiceFactory] Resolution 1920x1080";
         videoGeometry = QRect(0, 0, 1920, 1080);
         break;
+      case aap_protobuf::service::media::sink::message::VideoCodecResolutionType::VIDEO_1280x400:
+        OPENAUTO_LOG(info) << "[ServiceFactory] Resolution 1280x400";
+        videoGeometry = QRect(0, 0, 1280, 400);
+        break;
       default:
         OPENAUTO_LOG(info) << "[ServiceFactory] Resolution 800x480";
         videoGeometry = QRect(0, 0, 800, 480);
